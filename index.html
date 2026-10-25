@@ -1,210 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MA Devstudio</title>
-
-    <meta name="description"
-          content="MA Devstudio - Mobile App Development, Software Development and Digital Solutions.">
-
-    <meta name="author" content="MA Devstudio">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f5f7fa;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: white;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #555;
-            max-width: 650px;
-            margin: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        section {
-            padding: 60px 8%;
-            text-align: center;
-        }
-
-        .services {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            width: 280px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MA Devstudio builds modern mobile applications, websites and custom software solutions for businesses and organizations.">
+  <meta name="author" content="MA Devstudio">
+  <meta name="theme-color" content="#080d1b">
+  <title>MA Devstudio | Digital Products That Inspire</title>
+  <style>
+    :root {
+      --bg: #080d1b;
+      --bg-soft: #0e1730;
+      --ink: #10172a;
+      --muted: #64708a;
+      --white: #f8faff;
+      --blue: #3478f6;
+      --violet: #8b5cf6;
+      --line: rgba(148, 163, 184, .2);
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(12, 24, 54, .12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--white);
+      background: #f6f8fc;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7, 12, 25, .88); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 1.28rem; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
+    .brand span span { color: #5d91ff; font-weight: 600; }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center;
+      border-radius: 11px; color: white; font-size: 18px; font-weight: 900;
+      background: linear-gradient(135deg, #3986ff 0%, #7759ff 55%, #bc5bff 100%);
+      box-shadow: 0 8px 25px rgba(65, 105, 255, .32);
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: #d7deee; font-size: .92rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: #78a4ff; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 12px 21px; border: 1px solid transparent; border-radius: 11px;
+      font-weight: 700; font-size: .94rem; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: #fff; background: linear-gradient(135deg, #3478f6, #4f5ef3); box-shadow: 0 10px 25px rgba(52,120,246,.25); }
+    .btn-primary:hover { box-shadow: 0 14px 32px rgba(52,120,246,.35); }
+    .btn-outline { color: #fff; border-color: rgba(203, 213, 225, .45); background: rgba(255,255,255,.035); }
+    .btn-outline:hover { background: rgba(255,255,255,.09); }
+    .menu-toggle { display: none; color: white; background: transparent; border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; cursor: pointer; }
+    .hero {
+      position: relative; overflow: hidden; isolation: isolate;
+      background:
+        radial-gradient(ellipse at 78% 42%, rgba(42, 90, 225, .25), transparent 30%),
+        radial-gradient(ellipse at 12% 0%, rgba(101, 66, 210, .15), transparent 30%),
+        linear-gradient(135deg, #080d1b 0%, #0a1530 55%, #080d1b 100%);
+      padding: 100px 0 105px;
+    }
+    .hero::before, .hero::after { content: ""; position: absolute; z-index: -1; border: 1px solid rgba(91, 132, 255, .13); border-radius: 50%; }
+    .hero::before { width: 560px; height: 560px; right: -100px; top: -160px; }
+    .hero::after { width: 430px; height: 430px; right: -30px; top: -90px; }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 58px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #80aaff; text-transform: uppercase; letter-spacing: .13em; font-size: .75rem; font-weight: 800; margin-bottom: 18px; }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; background: #4c8dff; border-radius: 50%; box-shadow: 0 0 15px #4c8dff; }
+    h1 { font-size: clamp(2.8rem, 5.2vw, 4.6rem); line-height: 1.06; letter-spacing: -.055em; max-width: 680px; }
+    .gradient-text { background: linear-gradient(90deg, #6da4ff, #a58bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { max-width: 610px; color: #bdc8df; font-size: 1.08rem; margin-top: 23px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; color: #aab7d1; font-size: .85rem; margin-top: 28px; }
+    .status-dot { width: 8px; height: 8px; background: #35d39a; border-radius: 50%; box-shadow: 0 0 0 5px rgba(53,211,154,.12); }
+    .visual { min-height: 380px; display: grid; place-items: center; position: relative; }
+    .orb { position: absolute; width: 320px; height: 320px; border-radius: 50%; background: linear-gradient(135deg, rgba(45, 108, 245, .72), rgba(116, 67, 238, .55)); filter: blur(.2px); box-shadow: 0 0 100px rgba(64, 93, 255, .22); }
+    .code-card {
+      position: absolute; left: 0; top: 50px; z-index: 2; width: 160px;
+      padding: 15px; border-radius: 15px; background: rgba(18, 29, 54, .88);
+      border: 1px solid rgba(151, 177, 255, .18); color: #a9c5ff; box-shadow: var(--shadow);
+      transform: rotate(-7deg); font: 600 .78rem/1.8 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    .code-card .code-symbol { font-size: 1.8rem; color: #76a6ff; }
+    .phone {
+      position: relative; z-index: 3; width: 230px; min-height: 390px; padding: 13px;
+      border: 3px solid #7c8ba8; border-radius: 35px; background: linear-gradient(145deg, #172238, #03060d 70%);
+      box-shadow: 0 28px 70px rgba(0,0,0,.55), inset 0 0 0 2px #03060d;
+      transform: rotate(7deg);
+    }
+    .phone-screen { min-height: 358px; padding: 25px 15px 17px; border-radius: 24px; background: radial-gradient(circle at 80% 10%, #182d55, #070d1a 55%); }
+    .phone-top { display: flex; justify-content: space-between; font-size: .68rem; color: #d9e4ff; }
+    .phone-notch { width: 70px; height: 13px; background: #02040a; border-radius: 0 0 12px 12px; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); }
+    .phone h3 { font-size: 1.35rem; line-height: 1.2; margin-top: 42px; letter-spacing: -.04em; }
+    .phone p { font-size: .68rem; color: #9caecb; margin-top: 10px; }
+    .phone-button { display: inline-block; margin-top: 16px; padding: 7px 12px; border-radius: 7px; background: #3478f6; font-size: .68rem; font-weight: 700; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-top: 26px; }
+    .mini-grid span { padding: 12px 4px; text-align: center; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.045); border-radius: 9px; font-size: .58rem; color: #c9d6ef; }
+    .mini-grid b { display: block; color: #72a4ff; font-size: 1rem; margin-bottom: 5px; }
+    .floating-card { position: absolute; right: 0; bottom: 32px; z-index: 4; width: 155px; padding: 15px; border-radius: 14px; background: rgba(17, 28, 52, .92); border: 1px solid rgba(151,177,255,.18); box-shadow: var(--shadow); }
+    .floating-card strong { display: block; font-size: .82rem; }
+    .floating-card span { color: #9eb0d0; font-size: .7rem; }
+    .floating-lines { display: grid; gap: 6px; margin-top: 11px; }
+    .floating-lines i { display: block; height: 4px; border-radius: 8px; background: #304b83; }
+    .floating-lines i:nth-child(2) { width: 75%; }
+    .floating-lines i:nth-child(3) { width: 55%; }
+    section { scroll-margin-top: 76px; }
+    .section-light { background: #f6f8fc; color: var(--ink); padding: 82px 0; }
+    .section-dark { background: linear-gradient(140deg, #090f1f, #0b1428); color: var(--white); padding: 82px 0; }
+    .section-heading { margin-bottom: 35px; }
+    .section-heading .eyebrow { color: #3478f6; margin-bottom: 8px; }
+    .section-heading h2 { font-size: clamp(2rem, 3.5vw, 2.7rem); line-height: 1.15; letter-spacing: -.045em; }
+    .section-heading p { max-width: 590px; color: var(--muted); margin-top: 12px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service-card { padding: 30px; background: #fff; border: 1px solid #e8edf6; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(22, 40, 75, .045); transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .service-card:hover { transform: translateY(-7px); border-color: #c8d9ff; box-shadow: 0 18px 40px rgba(30, 69, 145, .11); }
+    .service-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 16px; color: #2869e8; background: #eaf1ff; font-size: 1.55rem; margin-bottom: 22px; }
+    .service-card:nth-child(2) .service-icon { color: #15966c; background: #e2f8ef; }
+    .service-card:nth-child(3) .service-icon { color: #8754e9; background: #f0e9ff; }
+    .service-card h3 { font-size: 1.16rem; margin-bottom: 9px; letter-spacing: -.02em; }
+    .service-card p { color: #66728a; font-size: .94rem; }
+    .text-link { display: inline-flex; gap: 8px; align-items: center; color: #2869e8; font-size: .9rem; font-weight: 750; margin-top: 20px; }
+    .text-link:hover { gap: 12px; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 70px; }
+    .about-copy h2 { font-size: clamp(2rem, 3.3vw, 2.65rem); line-height: 1.15; letter-spacing: -.045em; }
+    .about-copy p { color: #aebbd3; margin-top: 18px; max-width: 470px; }
+    .about-copy .btn { margin-top: 25px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .stat { min-height: 150px; padding: 24px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: rgba(255,255,255,.035); }
+    .stat strong { display: block; font-size: 2.25rem; letter-spacing: -.05em; }
+    .stat span { color: #aab8d2; font-size: .9rem; }
+    .stat .stat-mark { color: #78a5ff; font-size: 1.2rem; margin-bottom: 9px; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .process-item { padding: 26px; border-radius: 18px; border: 1px solid #e5ebf5; background: #fff; }
+    .process-number { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: #eaf1ff; color: #2869e8; font-weight: 850; margin-bottom: 18px; }
+    .process-item h3 { margin-bottom: 8px; }
+    .process-item p { color: #66728a; font-size: .93rem; }
+    .cta-band { padding: 30px 0; background: linear-gradient(105deg, #2869e8, #6646e8 70%, #8946e8); }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .cta-inner h2 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); letter-spacing: -.03em; }
+    .cta-inner p { color: rgba(255,255,255,.83); font-size: .95rem; margin-top: 3px; }
+    .btn-white { background: #fff; color: #245fe0; box-shadow: 0 8px 22px rgba(10,20,50,.12); }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; }
+    .contact-copy h2 { font-size: 2.3rem; line-height: 1.15; letter-spacing: -.04em; }
+    .contact-copy p { color: #aebbd3; margin-top: 14px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 12px; margin-top: 24px; color: #dce5f7; }
+    .contact-detail b { display: block; font-size: .9rem; }
+    .contact-detail span { color: #aebbd3; font-size: .88rem; overflow-wrap: anywhere; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: #dce5f7; font-size: .86rem; font-weight: 650; }
+    .field input, .field textarea, .field select { width: 100%; border: 1px solid rgba(203,213,225,.2); background: rgba(255,255,255,.045); color: #fff; padding: 13px 14px; border-radius: 10px; outline: none; font: inherit; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: #6797ff; box-shadow: 0 0 0 3px rgba(52,120,246,.14); }
+    .field textarea { min-height: 125px; resize: vertical; }
+    .field select option { color: #10172a; }
+    .form-note { grid-column: 1 / -1; color: #9eacc7; font-size: .8rem; }
+    .site-footer { background: #060a14; border-top: 1px solid rgba(255,255,255,.08); padding: 28px 0; color: #9eacc7; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-inner p { font-size: .85rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: .85rem; }
+    .footer-links a:hover { color: white; }
+    .reveal { animation: rise .75s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    @media (max-width: 900px) {
+      .nav-links { gap: 16px; }
+      .hero-grid { gap: 28px; grid-template-columns: 1fr .8fr; }
+      .visual { transform: scale(.9); }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-card:last-child { grid-column: 1 / -1; }
+      .about-grid { gap: 35px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 32px, 540px); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav > .btn { display: none; }
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0;
+        padding: 18px 22px 22px; flex-direction: column; align-items: stretch; gap: 0;
+        background: #080d1b; border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 0; }
+      .hero { padding: 68px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy { font-size: 1rem; }
+      .visual { min-height: 355px; transform: scale(.9); margin: -5px -18px -10px; }
+      .orb { width: 270px; height: 270px; }
+      .phone { width: 205px; min-height: 350px; }
+      .phone-screen { min-height: 320px; }
+      .code-card { left: 1%; }
+      .floating-card { right: 1%; }
+      .section-light, .section-dark { padding: 64px 0; }
+      .services-grid, .process-grid { grid-template-columns: 1fr; }
+      .service-card:last-child { grid-column: auto; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .stats-grid { gap: 12px; }
+      .stat { min-height: 125px; padding: 18px; }
+      .stat strong { font-size: 1.9rem; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .contact-form { grid-template-columns: 1fr; }
+      .field.full, .form-note { grid-column: auto; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 380px) {
+      .brand { font-size: 1.1rem; }
+      h1 { font-size: 2.55rem; }
+      .hero-actions .btn { width: 100%; }
+      .visual { transform: scale(.8); margin-inline: -35px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <div class="logo">MA Devstudio</div>
-
-    <nav>
-        <a href="#home">Home</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="MA Devstudio home">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>MA <span>Devstudio</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <div>
-        <h1>MA Devstudio</h1>
-
-        <p>
-            We build modern mobile applications, websites
-            and software solutions.
-        </p>
-
-        <a href="#services" class="btn">Our Services</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Let's Talk <span aria-hidden="true">↗</span></a>
     </div>
-</section>
+  </header>
 
-<section id="services">
-    <h2>Our Services</h2>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Welcome to MA Devstudio</div>
+          <h1>We Build Digital Products That <span class="gradient-text">Inspire.</span></h1>
+          <p class="hero-copy">We create mobile apps, websites, ERP systems and desktop applications with Flutter, helping turn ideas into useful, reliable digital experiences.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services">Explore Our Services <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline" href="#about"><span aria-hidden="true">▷</span> Discover Our Studio</a>
+          </div>
+          <div class="hero-note"><span class="status-dot" aria-hidden="true"></span> Thoughtful design. Practical technology. Real value.</div>
+        </div>
+        <div class="visual" aria-label="Illustration of digital products and a mobile app">
+          <div class="orb"></div>
+          <div class="code-card"><div class="code-symbol">&lt;/&gt;</div><div>design();</div><div>develop();</div><div>deliver();</div></div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-top"><b>MA Devstudio</b><span>☰</span></div>
+              <h3>Digital ideas.<br>Made real.</h3>
+              <p>Design. Develop. Deliver.</p>
+              <a class="phone-button" href="#services">Get Started ↗</a>
+              <div class="mini-grid">
+                <span><b>▣</b>Mobile Apps</span>
+                <span><b>▤</b>Websites</span>
+                <span><b>◇</b>Software</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card"><strong>Digital solutions</strong><span>Built around your needs</span><div class="floating-lines"><i></i><i></i><i></i></div></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="services">
-
-        <div class="card">
+    <section class="section-light" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What we do</div>
+          <h2>Technology that moves you forward.</h2>
+          <p>From mobile apps and websites to ERP platforms and Flutter-powered desktop software, we focus on useful, clear and dependable digital experiences.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▣</div>
             <h3>Mobile App Development</h3>
-            <p>
-                Android and cross-platform mobile applications
-                using modern technologies.
-            </p>
-        </div>
-
-        <div class="card">
+            <p>Modern Android and cross-platform applications designed around your users and business goals.</p>
+            <a class="text-link" href="#contact">Discuss an app <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▤</div>
             <h3>Web Development</h3>
-            <p>
-                Responsive and modern websites for businesses
-                and organizations.
-            </p>
+            <p>Responsive, accessible websites that present your brand professionally across phones, tablets and desktops.</p>
+            <a class="text-link" href="#contact">Plan a website <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Custom Software Solutions</h3>
+            <p>Practical software experiences and digital tools shaped around your requirements and workflow.</p>
+            <a class="text-link" href="#contact">Explore a solution <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▦</div>
+            <h3>ERP Development</h3>
+            <p>Integrated business systems to help manage workflows such as inventory, sales, staff and day-to-day operations.</p>
+            <a class="text-link" href="#contact">Discuss an ERP <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▣</div>
+            <h3>Desktop Apps with Flutter</h3>
+            <p>Cross-platform desktop applications for Windows, macOS and Linux, built with Flutter to suit your business needs.</p>
+            <a class="text-link" href="#contact">Plan a desktop app <span aria-hidden="true">→</span></a>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-            <h3>Software Solutions</h3>
-            <p>
-                Custom software solutions designed according
-                to your requirements.
-            </p>
+    <section class="section-dark" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="eyebrow">About the studio</div>
+          <h2>Building digital solutions with purpose.</h2>
+          <p>MA Devstudio is a software development studio focused on creating useful, reliable and user-friendly digital products. We value clear communication, thoughtful problem-solving and a practical approach to every project.</p>
+          <a class="btn btn-primary" href="#contact">Work With Us <span aria-hidden="true">→</span></a>
         </div>
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-mark" aria-hidden="true">✦</div><strong>01</strong><span>Focus on your goals</span></div>
+          <div class="stat"><div class="stat-mark" aria-hidden="true">◎</div><strong>02</strong><span>Design with users in mind</span></div>
+          <div class="stat"><div class="stat-mark" aria-hidden="true">⌘</div><strong>03</strong><span>Build with care</span></div>
+          <div class="stat"><div class="stat-mark" aria-hidden="true">↗</div><strong>04</strong><span>Improve through feedback</span></div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section-light" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">How we work</div>
+          <h2>A simple process. A clear direction.</h2>
+          <p>Every project starts with understanding what you need and moves forward through focused, collaborative steps.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-item"><div class="process-number">01</div><h3>Discover</h3><p>We discuss your idea, audience, requirements and the outcome you want to achieve.</p></article>
+          <article class="process-item"><div class="process-number">02</div><h3>Design & Build</h3><p>We shape the experience and develop a solution with usability, quality and clarity in mind.</p></article>
+          <article class="process-item"><div class="process-number">03</div><h3>Refine & Deliver</h3><p>We review the result, make agreed improvements and prepare the product for its next step.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div><h2>Have a project in mind?</h2><p>Let's turn your idea into something meaningful.</p></div>
+        <a class="btn btn-white" href="#contact">Start a Conversation <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="section-dark" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let's create something great.</h2>
+          <p>Tell us a little about your idea or project. We would be happy to hear from you.</p>
+          <div class="contact-detail"><span aria-hidden="true">✉</span><div><b>Email</b><span>madevstudio@example.com</span></div></div>
+          <div class="contact-detail"><span aria-hidden="true">⌖</span><div><b>Location</b><span>Karachi, Pakistan</span></div></div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Enter your name" required></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field full"><label for="service">What do you need?</label><select id="service" name="service" required><option value="" disabled selected>Select a service</option><option>Mobile App Development</option><option>Web Development</option><option>Custom Software</option><option>ERP Development</option><option>Desktop App Development with Flutter</option><option>Other / Not sure yet</option></select></div>
+          <div class="field full"><label for="message">Project details</label><textarea id="message" name="message" placeholder="Tell us about your idea..." required></textarea></div>
+          <button class="btn btn-primary" type="submit">Prepare Email <span aria-hidden="true">↗</span></button>
+          <p class="form-note">This form opens your email app with a prepared message. Replace the placeholder email address with your real business email before publishing.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">M</span><span>MA <span>Devstudio</span></span></a>
+      <p>© <span id="year">2026</span> MA Devstudio. All rights reserved.</p>
+      <div class="footer-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
     </div>
-</section>
+  </footer>
 
-<section id="about">
-    <h2>About MA Devstudio</h2>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-    <p>
-        MA Devstudio is a software development studio focused
-        on creating useful, reliable and user-friendly digital
-        products.
-    </p>
-</section>
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
 
-<section id="contact">
-    <h2>Contact Us</h2>
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        menuToggle.textContent = '☰';
+      });
+    });
 
-    <p>
-        Get in touch with MA Devstudio for your next project.
-    </p>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <a href="mailto:madevstudio@example.com" class="btn">
-        Contact Us
-    </a>
-</section>
-
-<footer>
-    <p>© 2026 MA Devstudio. All Rights Reserved.</p>
-</footer>
-
+    document.getElementById('contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const name = form.get('name');
+      const email = form.get('email');
+      const service = form.get('service');
+      const message = form.get('message');
+      const subject = encodeURIComponent('Project inquiry — ' + service);
+      const body = encodeURIComponent(
+        'Hello MA Devstudio,\n\n' +
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Service: ' + service + '\n\n' +
+        'Project details:\n' + message + '\n'
+      );
+      window.location.href = 'mailto:madevstudio@example.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
 </body>
 </html>
